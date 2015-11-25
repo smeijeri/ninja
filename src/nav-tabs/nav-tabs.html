@@ -1,0 +1,34 @@
+<ul class="nav nav-tabs"
+	role = "tablist"
+	data-bind="
+		foreach: viewModel.tabs
+	">
+
+	<li role="presentation"
+		data-bind="
+			css: { 'active': isActive }
+	">
+
+		<a data-bind="
+				text: title,
+				attr: {
+					'data-target': '#' + id,
+					'href': '#' + id,
+					'aria-controls': id
+		   }
+		   "
+		   role="tab"
+		   data-toggle="tab">
+		</a>
+	</li>
+</ul>
+
+<span data-bind="template: { afterRender: $component.init }"></span>
+
+<div class='tab-content' 
+	 data-bind="
+		with: $parent
+	">
+	<!-- ko template: {nodes: $componentTemplateNodes}--><!-- /ko -->
+</div>
+

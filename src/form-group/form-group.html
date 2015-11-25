@@ -1,0 +1,22 @@
+
+<div class="form-group has-feedback" 
+	data-bind="
+		validationOptions: { messageTemplate: 'form-group-validation-message' },
+		validationElement : value
+		">
+	<label data-bind="text: label"></label>
+	<!-- ko template : { name: controlTemplate } --><!-- /ko -->
+</div>
+<span data-bind="template: { afterRender: $component.init }"></span>
+
+<script type="text/html" id="form-group-control-template-string">
+	<input type="text" class="form-control" data-bind="value: value"/>
+</script>
+
+<script type="text/html" id="form-group-control-template-freetext">
+	<textarea class="form-control" data-bind="value: value"></textarea>
+</script>
+
+<script type="text/html" id="form-group-validation-message">
+	<em class="help-block" data-bind="validationMessage: field"></em>
+</script>
