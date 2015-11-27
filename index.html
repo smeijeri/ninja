@@ -1,52 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Ninja : A knockout custom components library">
+    <title>Ninja by smeijeri</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Ninja</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Ninja</h1>
+        <p class="header">A knockout custom components library</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/smeijeri/ninja">View on GitHub</a>
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/smeijeri/ninja/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/smeijeri/ninja/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/smeijeri/ninja">View On GitHub</a></li>
+        </ul>
 
-          <h1 id="project_title">Ninja</h1>
-          <h2 id="project_tagline">A knockout custom components library</h2>
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/smeijeri">smeijeri</a></p>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/smeijeri/ninja/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/smeijeri/ninja/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+      </header>
+      <section>
         <h1>
 <a id="ninja" class="anchor" href="#ninja" aria-hidden="true"><span class="octicon octicon-link"></span></a>ninja</h1>
 
 <p>Ninja is a knockout component library based on bootstrap css.</p>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Ninja maintained by <a href="https://github.com/smeijeri">smeijeri</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+<p><a href="http://smeijeri.github.io/ninja">http://smeijeri.github.io/ninja</a></p>
+
+<h2>
+<a id="api-reference" class="anchor" href="#api-reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>api reference</h2>
+
+<h3>
+<a id="ninja-1" class="anchor" href="#ninja-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>ninja</h3>
+
+<p>This is the main wrapper for the ninja components.
+You can use every individual components seperatly,
+but if you include the ninja module. All component loading will be configured for you</p>
+
+<h3>
+<a id="accordion" class="anchor" href="#accordion" aria-hidden="true"><span class="octicon octicon-link"></span></a>accordion</h3>
+
+<h3>
+<a id="form-group" class="anchor" href="#form-group" aria-hidden="true"><span class="octicon octicon-link"></span></a>form-group</h3>
+
+<h3>
+<a id="nav-tabs" class="anchor" href="#nav-tabs" aria-hidden="true"><span class="octicon octicon-link"></span></a>nav-tabs</h3>
+
+<h3>
+<a id="form-group-1" class="anchor" href="#form-group-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>form-group</h3>
+
+<h3>
+<a id="ninja-table" class="anchor" href="#ninja-table" aria-hidden="true"><span class="octicon octicon-link"></span></a>ninja-table</h3>
+
+<p>This component renderes a table, based on a viewModel that contains items.</p>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>ninja<span class="pl-k">-</span>table params<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span></span>
+<span class="pl-s"><span class="pl-ii">    items: users, </span></span>
+<span class="pl-s"><span class="pl-ii">    columns : [ </span></span>
+<span class="pl-s"><span class="pl-ii">        { name: 'id', label: 'Id' }, </span></span>
+<span class="pl-s"><span class="pl-ii">        { name: 'name', label: 'Displayname' },</span></span>
+<span class="pl-s"><span class="pl-ii">        { name: 'description', label: 'Description' } </span></span>
+<span class="pl-s"><span class="pl-ii">    ], </span></span>
+<span class="pl-s"><span class="pl-ii">    showHeader: true,</span></span>
+<span class="pl-s"><span class="pl-ii">    onSelectItem: onSelectUser</span></span>
+<span class="pl-s">    <span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>ninja<span class="pl-k">-</span>table<span class="pl-k">&gt;</span></pre></div>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
-
-    
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
   </body>
 </html>
