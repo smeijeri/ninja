@@ -18,9 +18,7 @@ define([
 	
 	mUriAr.splice(mUriAr.length -1, 1);
 	var mRootPath = mUriAr.join('/');
-	
-	
-	
+		
 	requirejs.config({
 		paths: {
 			"ninja-datasource" : mRootPath + "/models/datasource" + ext
