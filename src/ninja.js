@@ -53,11 +53,18 @@ define([
     	decorateElement: true
 	});
 	
-  	ko.components.register('nav-tabs', { require: mRootPath+'/components/nav-tabs/nav-tabs' + ext });
-   	ko.components.register('form-group', { require: mRootPath+'/components/form-group/form-group'  + ext});
-   	ko.components.register('ninja-table', { require: mRootPath+'/components/ninja-table/ninja-table'  + ext});
-   	ko.components.register('accordion', { require: mRootPath+'/components/accordion/accordion'  + ext});
-	ko.components.register('navbar', { require: mRootPath+'/components/navbar/navbar' + ext});		
+	var components = [
+		"nav-tabs",
+		"form-group",
+		"ninja-table",
+		"accordion",
+		"navbar",
+		"nested-repeater"
+	];
 	
+	for(var i=0, j=components.length; i<j; i++) {
+		ko.components.register(components[i], { require: mRootPath+'/components/'+components[i]+'/'+components[i] + ext });
+	}
+
 });
 

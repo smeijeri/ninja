@@ -1,0 +1,32 @@
+<!-- ko with: viewModel -->
+
+	<!-- ko template : $component.template -->
+	<!-- /ko -->
+
+<!-- /ko -->
+
+<span data-bind="template: { afterRender: $component.init }"></span>
+
+<script type="text/html" id="nested-repeater-template">
+	<ul data-bind="foreach: { data: items, as : 'currentItem' }">
+		<li>
+
+			<!-- ko template : $component.itemTemplate -->
+			<!-- /ko -->
+			
+			<!-- ko if : $data.hasOwnProperty("items") -->
+				<!-- ko template : $component.template -->
+				<!-- /ko -->
+			<!-- /ko -->
+		</li>
+	</ul>
+
+</script>
+
+<script type="text/html" id="nested-repeater-item-template">
+	<!-- ko foreach: { data : Object.keys(item), as : '_propKey' } -->
+		<!-- ko if: typeof(currentItem[_propKey]) !== 'object' -->
+			<span data-bind="text: currentItem[_propKey]"></span>
+		<!-- /ko -->
+	<!-- /ko -->
+</script>

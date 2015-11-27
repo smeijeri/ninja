@@ -17,6 +17,14 @@
 
 	"use strict";
 
+	/**
+      * @typedef params
+      * @property {array} items The items that contain the rows
+      * @property {array} [columns] An array defining how the row items should be interperted
+	  * @property {bool} [showHeader] Should it show a header row, this requires the columns property to be set
+	  * @property {function} [onSelectItem] What function should be called when the user clicks a row
+      */
+
 	define([
 	  'jquery',
 	  'knockout',
