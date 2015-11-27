@@ -1,5 +1,5 @@
 /**
- * @module form-group
+ * 
  */
 (function () {
 

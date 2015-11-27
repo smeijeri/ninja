@@ -18,7 +18,16 @@
         ninja : "bower_components/ninja/dist/ninja.min"
     }
 });
- */
+ * @example
+
+define([
+    "knockout",
+    "knockout-validation",
+    "ninja"
+], function(ko) {
+	
+});
+*/
  
 define([
 	"module",
@@ -63,6 +72,7 @@ define([
 	];
 	
 	for(var i=0, j=components.length; i<j; i++) {
+		console.log(components[i]);
 		ko.components.register(components[i], { require: mRootPath+'/components/'+components[i]+'/'+components[i] + ext });
 	}
 

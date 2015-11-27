@@ -4,10 +4,34 @@ Ninja is a knockout component library based on bootstrap css.
 
 http://smeijeri.github.io/ninja
 
-##api reference
+##why ninja?
+
+Both bootstrap and knockout are powerfull tools. But sometimes there can be a lot of ceremony in creating for instance a accordion UI.
+Ninja aims to take a way some of this pain. 
+
+Thanks to the knockout custom components things that used to take a lot of work are now a breeze.
+
+##semantics
+
+Next to trying to make things easier to define. Ninja tries to make bootstrap more semantic.
+Because all components work from custom tags things like ```<div class="form-group">``` become ```<form-group>```
+
+##getting started
+
+To install the package;
+
+``` bower install https://github.com/smeijeri/ninja.git ```
+
+Or; 
+
+``` bower intall ninja-js ```
+
+The later for some reason that I don't understand doesn't install the dependencies.
+
+#api reference
 
 {{#modules~}}
-# {{name}}
+## {{name}}
 {{>body~}}
 {{>members~}}
 {{/modules}}

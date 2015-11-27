@@ -1,5 +1,10 @@
 /**
+ * The form-group component takes a way on the ceremony of creating a bootstrap form-group
  * @module form-group
+ * @example
+ * <form-group params="value: ko.observable(), label: 'MyField'"></form-group>
+ * @example
+ * <form-group params="value: ko.observable(), label: 'MyField', controlTemlate: 'id-to-my-control-template'"></form-group>
  */
 (function () {
 
@@ -10,8 +15,7 @@
 	  'knockout',
 	  'text!./form-group.html',
 	  'bootstrap',
-	  "knockout-validation",
-	  "../config"
+	  "knockout-validation"
 	], function ($, ko, templateString) {
 
 		return {
