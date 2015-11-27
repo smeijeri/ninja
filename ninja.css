@@ -1,0 +1,37 @@
+tile-container {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-right: 16px;
+}
+tile {
+  height: 150px;
+  width: 150px;
+  float: left;
+  margin: 5px;
+  background: #DAA520;
+}
+tile.small {
+  width: 70px;
+  height: 70px;
+}
+tile.double {
+  width: 310px;
+}
+tile tile-content > i {
+  text-align: center;
+  width: 100%;
+  font-size: 64px;
+}
+tile tile-content {
+  display: block;
+  padding: 6px;
+  width: 100%;
+}
+tile tile-content h1,
+tile tile-content h2,
+tile tile-content h3,
+tile tile-content h4 {
+  margin-top: 0;
+  font-size: -3px;
+}

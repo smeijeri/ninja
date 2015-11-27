@@ -1,0 +1,15 @@
+<!-- ko template : { name: componentTemplate } --><!-- /ko -->
+<span data-bind="template: { afterRender: $component.init }"></span>
+
+<script type="text/html" id="ninja-navbar-simple">
+	<nav class="nav navbar-default">
+		<div class="container-fluid">
+			
+			<ul class="nav navbar-nav"  data-bind="foreach: navigationNodes">
+				<li data-bind="template: { nodes: [node]}, css: { 'active': isActive }">
+					
+				</li>
+			</ul>
+		</div>	
+	</nav>
+</script>
