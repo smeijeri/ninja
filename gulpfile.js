@@ -90,10 +90,10 @@ gulp.task("build-debugjs", function() {
 gulp.task("jsdocs", function() {
 	
 	//create the documentation
-	gulp.src([
-		"src/**/*.js"
-	], { base: './src' }
-	).pipe(jsdoc('./docs'));
+	//gulp.src([
+	//	"src/**/*.js"
+	//], { base: './src' }
+	//).pipe(jsdoc('./docs'));
 	
 	
 	gulp.src([
