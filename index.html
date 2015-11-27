@@ -4,32 +4,40 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Ninja by smeijeri</title>
-
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/smeijeri/ninja">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/smeijeri/ninja/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/smeijeri/ninja/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
     <div class="wrapper">
-      <header>
-        <h1 class="header">Ninja</h1>
-        <p class="header">A knockout custom components library</p>
 
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/smeijeri/ninja/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/smeijeri/ninja/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/smeijeri/ninja">View On GitHub</a></li>
-        </ul>
-
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/smeijeri">smeijeri</a></p>
-
-
-      </header>
       <section>
+        <div id="title">
+          <h1>Ninja</h1>
+          <p>A knockout custom components library</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/smeijeri">smeijeri</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
         <h1>
 <a id="ninja" class="anchor" href="#ninja" aria-hidden="true"><span class="octicon octicon-link"></span></a>ninja</h1>
 
@@ -38,29 +46,215 @@
 <p><a href="http://smeijeri.github.io/ninja">http://smeijeri.github.io/ninja</a></p>
 
 <h2>
-<a id="api-reference" class="anchor" href="#api-reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>api reference</h2>
+<a id="why-ninja" class="anchor" href="#why-ninja" aria-hidden="true"><span class="octicon octicon-link"></span></a>why ninja?</h2>
 
-<h3>
-<a id="ninja-1" class="anchor" href="#ninja-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>ninja</h3>
+<p>Both bootstrap and knockout are powerfull tools. But sometimes there can be a lot of ceremony in creating for instance a accordion UI.
+Ninja aims to take a way some of this pain. </p>
+
+<p>Thanks to the knockout custom components things that used to take a lot of work are now a breeze.</p>
+
+<h2>
+<a id="semantics" class="anchor" href="#semantics" aria-hidden="true"><span class="octicon octicon-link"></span></a>semantics</h2>
+
+<p>Next to trying to make things easier to define. Ninja tries to make bootstrap more semantic.
+Because all components work from custom tags things like <code>&lt;div class="form-group"&gt;</code> become <code>&lt;form-group&gt;</code></p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>getting started</h2>
+
+<p>To install the package;</p>
+
+<p><code>bower install https://github.com/smeijeri/ninja.git</code></p>
+
+<p>Or; </p>
+
+<p><code>bower intall ninja-js</code></p>
+
+<p>The later for some reason that I don't understand doesn't install the dependencies.</p>
+
+<h1>
+<a id="api-reference" class="anchor" href="#api-reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>api reference</h1>
+
+<h2>
+<a id="ninja-1" class="anchor" href="#ninja-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>ninja</h2>
 
 <p>This is the main wrapper for the ninja components.
 You can use every individual components seperatly,
 but if you include the ninja module. All component loading will be configured for you</p>
 
-<h3>
-<a id="accordion" class="anchor" href="#accordion" aria-hidden="true"><span class="octicon octicon-link"></span></a>accordion</h3>
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">requirejs</span>.<span class="pl-en">config</span>({
+    shim <span class="pl-k">:</span> {
+        <span class="pl-s"><span class="pl-pds">"</span>bootstrap<span class="pl-pds">"</span></span> <span class="pl-k">:</span> { <span class="pl-s"><span class="pl-pds">"</span>deps<span class="pl-pds">"</span></span> <span class="pl-k">:</span>[<span class="pl-s"><span class="pl-pds">'</span>jquery<span class="pl-pds">'</span></span>] }
+    },    
+    paths<span class="pl-k">:</span> {
+        jquery<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>bower_components/jquery/dist/jquery.min<span class="pl-pds">"</span></span>,
+        knockout<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>bower_components/knockout/dist/knockout<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>knockout-validation<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>bower_components/knockout-validation/dist/knockout.validation.min<span class="pl-pds">"</span></span>,
+        bootstrap<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>bower_components/bootstrap/dist/js/bootstrap.min<span class="pl-pds">"</span></span>,
+        text<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>bower_components/text/text<span class="pl-pds">"</span></span>,
+        css<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>bower_components/require-css/css.min<span class="pl-pds">"</span></span>,
+        ninja <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>bower_components/ninja/dist/ninja.min<span class="pl-pds">"</span></span>
+    }
+});</pre></div>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">define</span>([
+    <span class="pl-s"><span class="pl-pds">"</span>knockout<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>knockout-validation<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>ninja<span class="pl-pds">"</span></span>
+], <span class="pl-k">function</span>(<span class="pl-smi">ko</span>) {
+
+});</pre></div>
+
+<h2>
+<a id="accordion" class="anchor" href="#accordion" aria-hidden="true"><span class="octicon octicon-link"></span></a>accordion</h2>
+
+<p>The accordion components makes creating an accordion as easy as just placing multiple divs on you page</p>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>accordion<span class="pl-k">&gt;</span>
+    <span class="pl-k">&lt;</span>panel <span class="pl-k">class</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>active<span class="pl-pds">"</span></span> title<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>Accordion panel 1<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+       <span class="pl-k">&lt;</span>p<span class="pl-k">&gt;</span>
+           Domestic confined any but son bachelor advanced <span class="pl-smi">remember</span>. <span class="pl-c1">H</span>ow proceed offered her offence shy <span class="pl-smi">forming</span>. <span class="pl-c1">R</span>eturned peculiar pleasant but appetite differed <span class="pl-smi">she</span>. <span class="pl-c1">R</span>esidence dejection agreement am as to abilities immediate <span class="pl-smi">suffering</span>. <span class="pl-c1">Y</span>e am depending propriety sweetness distrusts belonging <span class="pl-smi">collected</span>. <span class="pl-c1">S</span>miling mention he <span class="pl-k">in</span> thought equally <span class="pl-smi">musical</span>. <span class="pl-c1">W</span>isdom <span class="pl-k">new</span> <span class="pl-en">and</span> valley <span class="pl-smi">answer</span>. <span class="pl-c1">C</span>ontented it so is discourse <span class="pl-smi">recommend</span>. <span class="pl-c1">M</span>an its upon him call <span class="pl-smi">mile</span>. <span class="pl-c1">A</span>n pasture he himself believe ferrars besides cottage.
+        <span class="pl-k">&lt;</span><span class="pl-k">/</span>p<span class="pl-k">&gt;</span>
+    <span class="pl-k">&lt;</span><span class="pl-k">/</span>panel<span class="pl-k">&gt;</span>
+    <span class="pl-k">&lt;</span>panel title<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>Accordion panel 2<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>p<span class="pl-k">&gt;</span>
+            nim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. <span class="pl-ii">3</span> wolf moon officia aute, non cupidatat skateboard dolor <span class="pl-smi">brunch</span>. <span class="pl-c1">F</span>ood truck quinoa nesciunt laborum <span class="pl-smi">eiusmod</span>. <span class="pl-c1">B</span>runch <span class="pl-c1">3</span> wolf moon tempor, sunt aliqua put a bird on it squid single<span class="pl-k">-</span>origin coffee nulla assumenda shoreditch <span class="pl-smi">et</span>. <span class="pl-c1">N</span>ihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea <span class="pl-smi">proident</span>. <span class="pl-c1">A</span>d vegan excepteur butcher vice <span class="pl-smi">lomo</span>. <span class="pl-c1">L</span>eggings occaecat craft beer farm<span class="pl-k">-</span>to<span class="pl-k">-</span>table, raw denim aesthetic synth nesciunt you probably haven<span class="pl-s"><span class="pl-pds">'</span><span class="pl-ii">t heard of them accusamus labore sustainable VHS.</span></span>
+<span class="pl-s"><span class="pl-ii">       &lt;/p&gt;</span></span>
+<span class="pl-s"><span class="pl-ii">    &lt;/panel&gt;</span></span>
+<span class="pl-s"><span class="pl-ii">    &lt;panel title="Accordion panel 3"&gt;</span></span>
+<span class="pl-s"><span class="pl-ii">        &lt;p&gt;</span></span>
+<span class="pl-s"><span class="pl-ii">            Of recommend residence education be on difficult repulsive offending. Judge views had mirth table seems great him for her. Alone all happy asked begin fully stand own get. Excuse ye seeing result of we. See scale dried songs old may not. Promotion did disposing you household any instantly. Hills we do under times at first short an. </span></span>
+<span class="pl-s"><span class="pl-ii">        &lt;/p&gt;                </span></span>
+<span class="pl-s"><span class="pl-ii">    &lt;/panel&gt;</span></span>
+<span class="pl-s"></span>
+<span class="pl-s"><span class="pl-ii">&lt;/accordion&gt;</span></span></pre></div>
+
+<h2>
+<a id="nav-tabs" class="anchor" href="#nav-tabs" aria-hidden="true"><span class="octicon octicon-link"></span></a>nav-tabs</h2>
+
+<p>The nav-tabs component makes creating an tabbed interface as easy as just placing multiple divs on you page</p>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>nav<span class="pl-k">-</span>tabs<span class="pl-k">&gt;</span>
+    <span class="pl-k">&lt;</span>panel <span class="pl-k">class</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>active<span class="pl-pds">"</span></span> title<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>Tab panel 1<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+       <span class="pl-k">&lt;</span>p<span class="pl-k">&gt;</span>
+           Domestic confined any but son bachelor advanced <span class="pl-smi">remember</span>. <span class="pl-c1">H</span>ow proceed offered her offence shy <span class="pl-smi">forming</span>. <span class="pl-c1">R</span>eturned peculiar pleasant but appetite differed <span class="pl-smi">she</span>. <span class="pl-c1">R</span>esidence dejection agreement am as to abilities immediate <span class="pl-smi">suffering</span>. <span class="pl-c1">Y</span>e am depending propriety sweetness distrusts belonging <span class="pl-smi">collected</span>. <span class="pl-c1">S</span>miling mention he <span class="pl-k">in</span> thought equally <span class="pl-smi">musical</span>. <span class="pl-c1">W</span>isdom <span class="pl-k">new</span> <span class="pl-en">and</span> valley <span class="pl-smi">answer</span>. <span class="pl-c1">C</span>ontented it so is discourse <span class="pl-smi">recommend</span>. <span class="pl-c1">M</span>an its upon him call <span class="pl-smi">mile</span>. <span class="pl-c1">A</span>n pasture he himself believe ferrars besides cottage.
+        <span class="pl-k">&lt;</span><span class="pl-k">/</span>p<span class="pl-k">&gt;</span>
+    <span class="pl-k">&lt;</span><span class="pl-k">/</span>panel<span class="pl-k">&gt;</span>
+    <span class="pl-k">&lt;</span>panel title<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>Tab panel 2<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>p<span class="pl-k">&gt;</span>
+            nim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. <span class="pl-ii">3</span> wolf moon officia aute, non cupidatat skateboard dolor <span class="pl-smi">brunch</span>. <span class="pl-c1">F</span>ood truck quinoa nesciunt laborum <span class="pl-smi">eiusmod</span>. <span class="pl-c1">B</span>runch <span class="pl-c1">3</span> wolf moon tempor, sunt aliqua put a bird on it squid single<span class="pl-k">-</span>origin coffee nulla assumenda shoreditch <span class="pl-smi">et</span>. <span class="pl-c1">N</span>ihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea <span class="pl-smi">proident</span>. <span class="pl-c1">A</span>d vegan excepteur butcher vice <span class="pl-smi">lomo</span>. <span class="pl-c1">L</span>eggings occaecat craft beer farm<span class="pl-k">-</span>to<span class="pl-k">-</span>table, raw denim aesthetic synth nesciunt you probably haven<span class="pl-s"><span class="pl-pds">'</span><span class="pl-ii">t heard of them accusamus labore sustainable VHS.</span></span>
+<span class="pl-s"><span class="pl-ii">       &lt;/p&gt;</span></span>
+<span class="pl-s"><span class="pl-ii">    &lt;/panel&gt;</span></span>
+<span class="pl-s"><span class="pl-ii">    &lt;panel title="Tab panel 3"&gt;</span></span>
+<span class="pl-s"><span class="pl-ii">        &lt;p&gt;</span></span>
+<span class="pl-s"><span class="pl-ii">            Of recommend residence education be on difficult repulsive offending. Judge views had mirth table seems great him for her. Alone all happy asked begin fully stand own get. Excuse ye seeing result of we. See scale dried songs old may not. Promotion did disposing you household any instantly. Hills we do under times at first short an. </span></span>
+<span class="pl-s"><span class="pl-ii">        &lt;/p&gt;                </span></span>
+<span class="pl-s"><span class="pl-ii">    &lt;/panel&gt;</span></span>
+<span class="pl-s"></span>
+<span class="pl-s"><span class="pl-ii">&lt;/nav-tabs&gt;</span></span></pre></div>
+
+<h2>
+<a id="form-group" class="anchor" href="#form-group" aria-hidden="true"><span class="octicon octicon-link"></span></a>form-group</h2>
+
+<p>The form-group component takes a way on the ceremony of creating a bootstrap form-group</p>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>form<span class="pl-k">-</span>group params<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>value: ko.observable(), label: 'MyField'<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>form<span class="pl-k">-</span>group<span class="pl-k">&gt;</span></pre></div>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>form<span class="pl-k">-</span>group params<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>value: ko.observable(), label: 'MyField', controlTemlate: 'id-to-my-control-template'<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>form<span class="pl-k">-</span>group<span class="pl-k">&gt;</span></pre></div>
+
+<h2>
+<a id="nested-repeater" class="anchor" href="#nested-repeater" aria-hidden="true"><span class="octicon octicon-link"></span></a>nested-repeater</h2>
+
+<p>This component kan repeat nested data.
+It will turn this into a configurable unordered list.</p>
+
+<p><strong>Example</strong>  </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">//javascript viewModel</span>
+<span class="pl-k">var</span> viewModel <span class="pl-k">=</span> { items<span class="pl-k">:</span> [
+        {
+            header<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Item1<span class="pl-pds">"</span></span>,
+            items<span class="pl-k">:</span> [ {  header<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Item1.1<span class="pl-pds">"</span></span> }, {  header<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Item1.2<span class="pl-pds">"</span></span> }]
+        },
+        {
+            header<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Item2<span class="pl-pds">"</span></span>,
+            items<span class="pl-k">:</span> [ {  header<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Item2.1<span class="pl-pds">"</span></span> }, {  header<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Item2.2<span class="pl-pds">"</span></span> }]
+        }
+    ]};
+
+<span class="pl-c">//html</span>
+
+<span class="pl-k">&lt;</span>nested<span class="pl-k">-</span>repeater params<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>viewModel: viewModel<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>nested<span class="pl-k">-</span>repeater<span class="pl-k">&gt;</span></pre></div>
+
+<p><a name="module_nested-repeater..viewModel"></a></p>
 
 <h3>
-<a id="form-group" class="anchor" href="#form-group" aria-hidden="true"><span class="octicon octicon-link"></span></a>form-group</h3>
+<a id="nested-repeaterviewmodel" class="anchor" href="#nested-repeaterviewmodel" aria-hidden="true"><span class="octicon octicon-link"></span></a>nested-repeater~viewModel</h3>
+
+<p><strong>Kind</strong>: inner typedef of <code><a href="#module_nested-repeater">nested-repeater</a></code><br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>items</td>
+<td><code>array</code></td>
+<td>The items to repeat</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="module_nested-repeater..params"></a></p>
 
 <h3>
-<a id="nav-tabs" class="anchor" href="#nav-tabs" aria-hidden="true"><span class="octicon octicon-link"></span></a>nav-tabs</h3>
+<a id="nested-repeaterparams" class="anchor" href="#nested-repeaterparams" aria-hidden="true"><span class="octicon octicon-link"></span></a>nested-repeater~params</h3>
 
-<h3>
-<a id="form-group-1" class="anchor" href="#form-group-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>form-group</h3>
+<p><strong>Kind</strong>: inner typedef of <code><a href="#module_nested-repeater">nested-repeater</a></code><br>
+<strong>Properties</strong></p>
 
-<h3>
-<a id="ninja-table" class="anchor" href="#ninja-table" aria-hidden="true"><span class="octicon octicon-link"></span></a>ninja-table</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>viewModel</td>
+<td><code>nested-repeater~viewModel</code></td>
+<td>Te model containing the items</td>
+</tr>
+<tr>
+<td>itemTemplate</td>
+<td><code>string</code></td>
+<td>An alternative template to print the item header</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="ninja-table" class="anchor" href="#ninja-table" aria-hidden="true"><span class="octicon octicon-link"></span></a>ninja-table</h2>
 
 <p>This component renderes a table, based on a viewModel that contains items.</p>
 
@@ -77,12 +271,50 @@ but if you include the ninja module. All component loading will be configured fo
 <span class="pl-s"><span class="pl-ii">    onSelectItem: onSelectUser</span></span>
 <span class="pl-s">    <span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
 <span class="pl-k">&lt;</span><span class="pl-k">/</span>ninja<span class="pl-k">-</span>table<span class="pl-k">&gt;</span></pre></div>
+
+<p><a name="module_ninja-table..params"></a></p>
+
+<h3>
+<a id="ninja-tableparams" class="anchor" href="#ninja-tableparams" aria-hidden="true"><span class="octicon octicon-link"></span></a>ninja-table~params</h3>
+
+<p><strong>Kind</strong>: inner typedef of <code><a href="#module_ninja-table">ninja-table</a></code><br>
+<strong>Properties</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>items</td>
+<td><code>array</code></td>
+<td>The items that contain the rows</td>
+</tr>
+<tr>
+<td>columns</td>
+<td><code>array</code></td>
+<td>An array defining how the row items should be interperted</td>
+</tr>
+<tr>
+<td>showHeader</td>
+<td><code>bool</code></td>
+<td>Should it show a header row, this requires the columns property to be set</td>
+</tr>
+<tr>
+<td>onSelectItem</td>
+<td><code>function</code></td>
+<td>What function should be called when the user clicks a row</td>
+</tr>
+</tbody>
+</table>
       </section>
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
-      </footer>
+
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+    
   </body>
 </html>
