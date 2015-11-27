@@ -2,7 +2,7 @@
   "name": "ninja",
   "homepage": "https://github.com/smeijeri/ninja",
   "description": "A knockout extention library to build large SPA applications",
-  "main": "src/ninja.js",
+  "main": "dist/ninja.min.js",
   "moduleType": [],
   "keywords": [
     "knockout",

@@ -1,3 +1,8 @@
+/**
+ * This is the main wrapper for the ninja components.
+ * 
+ * @module ninja 
+ */
 define([
 	"module",
 	"knockout", 

@@ -12,6 +12,7 @@ var jshint = require('gulp-jshint');
 var rename = require("gulp-rename");
 var minifyHTML = require('gulp-minify-html');
 var watch = require('gulp-watch');
+var jsdoc = require("gulp-jsdoc");
 
 /*
 var print = require('gulp-print');
@@ -70,8 +71,9 @@ gulp.task("jshint", function() {
   	.pipe(jshint.reporter('fail'))
 });
 
-gulp.task("buildjs", function() {
-	
+gulp.task("buildjs", ["buildjs-uglify", "build-debugjs", "jsdocs" ]);
+
+gulp.task("buildjs-uglify", function() {
 	//minify and publish 
 	gulp.src([
 		"src/**/*.js"
@@ -83,8 +85,10 @@ gulp.task("buildjs", function() {
        	}))
 	.pipe(print())	
 	.pipe(sourcemaps.write("."))
-	.pipe(gulp.dest('dist'));
-	
+	.pipe(gulp.dest('dist'));	
+})
+
+gulp.task("build-debugjs", function() {
 	//create the debug versions
 	gulp.src([
 		"src/**/*.js"
@@ -93,7 +97,17 @@ gulp.task("buildjs", function() {
             suffix: '.debug'
     }))
 	.pipe(gulp.dest('dist'));
-		
+	
+});
+
+gulp.task("jsdocs", function() {
+	
+	//create the documentation
+	gulp.src([
+		"src/**/*.js"
+	], { base: './src' }
+	).pipe(jsdoc('./docs'));
+	
 });
 
 gulp.task("buildcss", function() {
