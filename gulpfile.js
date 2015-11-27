@@ -13,24 +13,11 @@ var rename = require("gulp-rename");
 var minifyHTML = require('gulp-minify-html');
 var watch = require('gulp-watch');
 var jsdoc = require("gulp-jsdoc");
-
-/*
-var print = require('gulp-print');
-//var merge = require('merge-stream');
-//var jsdoc = require("gulp-jsdoc");
-var jshint = require('gulp-jshint');
-var watch = require('gulp-watch');
-var map = require('map-stream');
-//var fs = require('fs');
-var gxml = require('gulp-xml2js');
-var flatten = require("gulp-flatten");
+var fs = require('fs');
+var gutil = require("gulp-util");
 var concat = require("gulp-concat");
-//var path = require('path');
-var uglify = require("gulp-uglify");
-var reporters = require("reporters");
-var rename = require("gulp-rename");
-var minifyCss = require('gulp-minify-css');
-*/
+var gulpJsdoc2md = require("gulp-jsdoc-to-markdown");
+
 gulp.task("default", function () {
 
 	console.log("gulp works!");
@@ -107,6 +94,17 @@ gulp.task("jsdocs", function() {
 		"src/**/*.js"
 	], { base: './src' }
 	).pipe(jsdoc('./docs'));
+	
+	
+	gulp.src([
+		"src/**/*.js"
+	])
+	.pipe(concat("readme.md"))
+	.pipe(gulpJsdoc2md({ template: fs.readFileSync("./readme.hbs", "utf8") }))
+	.on("error", function(err){
+		gutil.log("jsdoc2md failed:", err.message);
+	})
+	.pipe(gulp.dest("."));	
 	
 });
 

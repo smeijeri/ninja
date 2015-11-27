@@ -1,5 +1,17 @@
 /**
+ * This component renderes a table, based on a viewModel that contains items.
  * @module ninja-table
+ * @example <ninja-table params="
+ *	items: users, 
+ *	columns : [ 
+ *		{ name: 'id', label: 'Id' }, 
+ *		{ name: 'name', label: 'Displayname' },
+ *		{ name: 'description', label: 'Description' } 
+ *	], 
+ *	showHeader: true,
+ *	onSelectItem: onSelectUser
+ *	">
+ * </ninja-table>
  */
 (function () {
 

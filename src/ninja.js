@@ -1,6 +1,7 @@
 /**
  * This is the main wrapper for the ninja components.
- * 
+ * You can use every individual components seperatly,
+ * but if you include the ninja module. All component loading will be configured for you
  * @module ninja 
  */
 define([
